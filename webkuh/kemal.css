@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* HEADER */
+header {
+    font: optional;
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+/* CONTAINER */
+.container {
+    background-image: url(kemal.jpg);
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* GAME GRID */
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* CARD GAME */
+.game {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.game img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.game:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255,255,255,0.1);
+}
+
+.game.active {
+    border: 2px solid #22c55e;
+    box-shadow: 0 0 15px #22c55e;
+}
+
+/* FORM */
+.form {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #0f172a;
+    color: white;
+}
+
+/* BUTTON */
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* POPUP BACKGROUND */
+.popup {
+    display: none; /* default hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* ACTIVE POPUP */
+.popup.active {
+    display: flex;
+}
+
+/* POPUP BOX */
+.popup-box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    animation: muncul 0.3s ease;
+}
+
+@keyframes muncul {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
